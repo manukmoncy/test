@@ -1,0 +1,34 @@
+####### STEP 1 ###############
+
+execute the sql commands in the file 'SQL Commands' in mysql
+
+####### STEP 2 ###############
+
+install hadoop & storm (use the file storm documentation for help)
+
+####### STEP 3 ###############
+
+extract cleartrip_data_maker and and open it with eclipse
+add the external jar files to the prog from the lib folder if not found already
+
+####### STEP 4 ###############
+
+run the eclipse program to create the data
+
+####### STEP 5 ###############
+
+to compile the main topology go to the folder storm-prog and run this commands :-
+
+mvn -f m2-pom.xml compile exec:java -Dexec.classpathScope=compile -Dexec.mainClass=storm.starter.MainTopology
+
+mvn -f m2-pom.xml package
+
+#### go to storm-prog/target #### and then copy the name of the <jar file with depepndencies>
+
+storm jar storm-starter-0.0.1-SNAPSHOT-jar-with-dependencies.jar storm.starter.MainTopology
+
+####### STEP 6 ###############
+
+now check the final tables in sql....
+
+
